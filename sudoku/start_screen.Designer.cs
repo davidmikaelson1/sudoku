@@ -31,7 +31,6 @@
             this.start_menu = new System.Windows.Forms.MenuStrip();
             this.menu_bar = new System.Windows.Forms.ToolStripMenuItem();
             this.startANewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autofillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.start_game_button = new System.Windows.Forms.Button();
             this.sudoku_title = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@
             this.menu_bar});
             this.start_menu.Location = new System.Drawing.Point(0, 0);
             this.start_menu.Name = "start_menu";
-            this.start_menu.Size = new System.Drawing.Size(1058, 51);
+            this.start_menu.Size = new System.Drawing.Size(1058, 49);
             this.start_menu.TabIndex = 0;
             this.start_menu.Text = "menuStrip1";
             // 
@@ -57,7 +56,6 @@
             this.menu_bar.BackColor = System.Drawing.Color.Black;
             this.menu_bar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startANewGameToolStripMenuItem,
-            this.autofillToolStripMenuItem,
             this.exitAppToolStripMenuItem});
             this.menu_bar.ForeColor = System.Drawing.Color.White;
             this.menu_bar.Name = "menu_bar";
@@ -75,14 +73,6 @@
             this.startANewGameToolStripMenuItem.Size = new System.Drawing.Size(372, 50);
             this.startANewGameToolStripMenuItem.Text = "Start a new game";
             this.startANewGameToolStripMenuItem.Click += new System.EventHandler(this.startANewGameToolStripMenuItem_Click);
-            // 
-            // autofillToolStripMenuItem
-            // 
-            this.autofillToolStripMenuItem.BackColor = System.Drawing.Color.Black;
-            this.autofillToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.autofillToolStripMenuItem.Name = "autofillToolStripMenuItem";
-            this.autofillToolStripMenuItem.Size = new System.Drawing.Size(372, 50);
-            this.autofillToolStripMenuItem.Text = "Autofill";
             // 
             // exitAppToolStripMenuItem
             // 
@@ -150,7 +140,6 @@
         private System.Windows.Forms.MenuStrip start_menu;
         private System.Windows.Forms.ToolStripMenuItem menu_bar;
         private System.Windows.Forms.ToolStripMenuItem startANewGameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem autofillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitAppToolStripMenuItem;
         private System.Windows.Forms.Button start_game_button;
         private System.Windows.Forms.Label sudoku_title;

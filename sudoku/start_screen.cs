@@ -34,6 +34,7 @@ namespace sudoku
             game_screen form = new game_screen();
             form.ShowDialog();
             this.Show();
+            this.Close();
         }
 
         private void startANewGameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace sudoku
             game_screen form = new game_screen();
             form.ShowDialog();
             this.Show();
+            this.Close();
         }
     }
 }

@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.game_menu = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startANewGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autofillToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.game_timer = new System.Windows.Forms.Timer(this.components);
             this.sudoku_title = new System.Windows.Forms.Label();
             this.sudoku_board = new System.Windows.Forms.Panel();
+            this.timer_label = new System.Windows.Forms.Label();
+            this.check_button = new System.Windows.Forms.Button();
+            this.enter_value = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.game_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +87,7 @@
             this.autofillToolStripMenuItem.Name = "autofillToolStripMenuItem";
             this.autofillToolStripMenuItem.Size = new System.Drawing.Size(372, 50);
             this.autofillToolStripMenuItem.Text = "Autofill";
+            this.autofillToolStripMenuItem.Click += new System.EventHandler(this.autofillToolStripMenuItem_Click);
             // 
             // exitAppToolStripMenuItem
             // 
@@ -121,12 +124,68 @@
             this.sudoku_board.Size = new System.Drawing.Size(501, 501);
             this.sudoku_board.TabIndex = 4;
             // 
+            // timer_label
+            // 
+            this.timer_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.timer_label.AutoSize = true;
+            this.timer_label.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timer_label.ForeColor = System.Drawing.Color.White;
+            this.timer_label.Location = new System.Drawing.Point(908, 16);
+            this.timer_label.Margin = new System.Windows.Forms.Padding(0);
+            this.timer_label.Name = "timer_label";
+            this.timer_label.Size = new System.Drawing.Size(0, 60);
+            this.timer_label.TabIndex = 6;
+            this.timer_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // check_button
+            // 
+            this.check_button.BackColor = System.Drawing.Color.Black;
+            this.check_button.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_button.Location = new System.Drawing.Point(891, 554);
+            this.check_button.Margin = new System.Windows.Forms.Padding(1);
+            this.check_button.Name = "check_button";
+            this.check_button.Size = new System.Drawing.Size(129, 52);
+            this.check_button.TabIndex = 7;
+            this.check_button.Text = "Check";
+            this.check_button.UseVisualStyleBackColor = false;
+            this.check_button.Click += new System.EventHandler(this.check_button_Click);
+            // 
+            // enter_value
+            // 
+            this.enter_value.Enabled = false;
+            this.enter_value.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_value.Location = new System.Drawing.Point(840, 149);
+            this.enter_value.Name = "enter_value";
+            this.enter_value.Size = new System.Drawing.Size(68, 49);
+            this.enter_value.TabIndex = 8;
+            this.enter_value.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(833, 105);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 41);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Enter value:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // game_screen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1058, 631);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.enter_value);
+            this.Controls.Add(this.check_button);
+            this.Controls.Add(this.timer_label);
             this.Controls.Add(this.sudoku_board);
             this.Controls.Add(this.sudoku_title);
             this.Controls.Add(this.game_menu);
@@ -136,6 +195,7 @@
             this.Name = "game_screen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "game_screen";
+            this.Load += new System.EventHandler(this.game_screen_Load);
             this.game_menu.ResumeLayout(false);
             this.game_menu.PerformLayout();
             this.ResumeLayout(false);
@@ -150,8 +210,11 @@
         private System.Windows.Forms.ToolStripMenuItem startANewGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autofillToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitAppToolStripMenuItem;
-        private System.Windows.Forms.Timer game_timer;
         private System.Windows.Forms.Label sudoku_title;
         private System.Windows.Forms.Panel sudoku_board;
+        private System.Windows.Forms.Label timer_label;
+        private System.Windows.Forms.Button check_button;
+        private System.Windows.Forms.TextBox enter_value;
+        private System.Windows.Forms.Label label1;
     }
 }

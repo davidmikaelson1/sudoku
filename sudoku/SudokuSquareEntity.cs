@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace sudoku
@@ -13,7 +14,6 @@ namespace sudoku
         {
             this.value = value;
             this.label = label;
-
         }
 
         public int get_value()
